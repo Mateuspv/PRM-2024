@@ -9,11 +9,13 @@ function MovieCard({
     return (
         <Paper
         component="a"
+        elevation={0}
         href="/1"
         sx={{
             minWidth: '10rem'
         }}>
-            <img src={ poster}/>
+            <img src={ poster}
+            style={{width: '100%'}}/>
         </Paper>
     )
 }
