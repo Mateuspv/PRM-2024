@@ -13,9 +13,9 @@ function App() {
       }}>
       <HighlightSection/>
         <Section
-        title="Para toda familia"></Section>
+        title="Recomendado para Você"></Section>
         <Section 
-        title="Para familia sua"></Section>
+        title="Para toda familia"></Section>
       </main>
       <Footer />
     </div>
