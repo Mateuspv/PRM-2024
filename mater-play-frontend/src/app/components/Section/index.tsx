@@ -45,15 +45,10 @@ function Section({
                  }}
                 >
                     {movies.map(item => (
-                        <MovieCard key={item.id} poster={'assets/' + item.poster}/>
+                        <MovieCard key={item.id} movie={item}/>
                     ))}
 
-                    
-                    <MovieCard poster="assets/house-of-dragons-poster.jpg"/>
-                    <MovieCard poster="assets/2zmTngn1tYC1AvfnrFLhxeD82hz.jpg"/>
-                    <MovieCard poster="assets/7qOSKoOAPgemYhBwbJgBWcCxPWZ.jpg"/>
-                    <MovieCard poster="assets/9h2KgGXSmWigNTn3kQdEFFngj9i.jpg"/>
-                    <MovieCard poster="assets/cQLJT6hTXio0md94oBsSWADOECf.jpg"/>      
+                      
                 </Stack>
             </Container>
 

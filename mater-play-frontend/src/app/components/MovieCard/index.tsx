@@ -1,20 +1,20 @@
 import { Paper } from "@mui/material";
 
 type MovieCardProps = {
-    poster?: string;
+    movie: IMovie
 }
 function MovieCard({
-    poster
+    movie
 }: MovieCardProps) {
     return (
         <Paper
         component="a"
         elevation={0}
-        href="/1"
+        href={movie.id}
         sx={{
             minWidth: '10rem'
         }}>
-            <img src={ poster}
+            <img src={ `assets/${movie.poster}` }
             style={{width: '100%'}}/>
         </Paper>
     )

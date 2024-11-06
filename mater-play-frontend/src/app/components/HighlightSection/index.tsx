@@ -1,12 +1,34 @@
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { IMovie } from "../../@libs/types";
+import { MovieService } from "../../services/movies-service";
 
 function HighlightSection() {
+
+    const params = useParams();
+
+    const [movie, setMovie] = useState<IMovie>({} as IMovie);
+
+    useEffect(() => {
+
+        const movieId = (params.id) ? params.id : 'eab2923c-dc9f-4ded-bafe-604ed2c023ab';
+
+        MovieService.getMoviesByid(movieId)
+        .then(result => {
+            if(result) setMovie(result)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    
+}, [params])
     return (
         <Box>
             <Container>
                 <Stack
                 direction="row">
-                    <img src="assets/house-of-dragons-poster.jpg"/>
+                    <img src={`assets/${movie.poster}`}  />
                     <Stack
                     sx={{
                         justifyContent: 'center',
@@ -14,7 +36,7 @@ function HighlightSection() {
                     }}>
                         <Typography
                         variant="h4">
-                            A Casa do Dragão
+                            {movie.title}
                         </Typography>
                         <Typography
                         variant="subtitle2">
@@ -40,10 +62,7 @@ function HighlightSection() {
                         sx={{paddingTop: '2rem',
                             marginBottom: '0.5rem'
                         }}>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Ipsa, fuga. Ratione facilis sit ipsa.
-                             Illo pariatur eius praesentium cum quas molestias officiis, 
-                             nobis mollitia repudiandae atque dolorum labore repellendus! Ipsum.
+                            {movie.description}
                         </Typography>
                         <Stack
                             gap={1}
