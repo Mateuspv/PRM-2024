@@ -5,6 +5,7 @@ import { Movie } from './movies/movie-entity';
 import { Category } from './categories/category-entity';
 import { CategoryModule } from './categories/category-module';
 import { MovieModule } from './movies/movie-module';
+import { GenreModule } from './generies/genre-modules';
 
 
 @Module({
@@ -25,6 +26,7 @@ import { MovieModule } from './movies/movie-module';
     }),
     CategoryModule,
     MovieModule,
+    GenreModule,
   ],
   
 })

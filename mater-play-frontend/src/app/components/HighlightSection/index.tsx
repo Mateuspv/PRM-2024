@@ -45,8 +45,8 @@ function HighlightSection() {
                                 borderStyle: 'solid',
                                 padding: '0.2rem',
                                 marginRight: '0.3rem'
-                            }}>16</span>
-                            Aventura, Fantasia, Ação
+                            }}>{movie.ageRating}</span>
+                            {movie.generies && movie.generies.map(genre => (genre.name)).join(', ')}
                         </Typography>
                         <Typography
                             variant="subtitle1"
