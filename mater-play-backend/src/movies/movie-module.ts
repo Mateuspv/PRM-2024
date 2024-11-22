@@ -7,6 +7,7 @@ import { Category } from "src/categories/category-entity";
 
 @Module({
     imports: [TypeOrmModule.forFeature([Category, Movie])],
+    SupabaseProvide;
     providers: [MovieService],
     controllers: [MovieController],
 })
